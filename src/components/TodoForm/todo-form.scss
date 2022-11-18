@@ -1,0 +1,9 @@
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+}

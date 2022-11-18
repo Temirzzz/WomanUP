@@ -1,0 +1,30 @@
+.input {
+  &_todo {
+    border: none;
+    width: 100%;
+    height: 40px;
+    margin-right: 20px;
+    font-size: 16px;
+  }
+
+  &_todo:focus,
+  &_todo:focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  &_form {
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+  }
+
+  &_form:last-child {
+    margin-bottom: 0;
+  }
+
+  &_file {
+    border: none;
+    padding-left: 0;
+  }
+}
