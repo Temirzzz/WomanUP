@@ -79,7 +79,7 @@ const TodoForm = () => {
       <Input
         type="date"
         onChange={(event) =>
-          setDate(dayjs(event.target.value).format("DD/MM/YYYY"))
+          setDate(dayjs(event.target.value).format("DD.MM.YYYY"))
         }
         placeholder="Дата завершения"
         className="input input_form"

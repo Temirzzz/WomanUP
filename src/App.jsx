@@ -16,9 +16,9 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    const q = query(collection(db, "todos"));
+    const queryData = query(collection(db, "todos"));
 
-    const unsub = onSnapshot(q, (querySnapshot) => {
+    const unsub = onSnapshot(queryData, (querySnapshot) => {
       let todosArray = [];
       querySnapshot.forEach((doc) => {
         todosArray.push({ ...doc.data(), id: doc.id });

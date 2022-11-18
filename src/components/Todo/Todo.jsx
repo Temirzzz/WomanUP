@@ -8,7 +8,9 @@ import dayjs from "dayjs";
 
 const Todo = ({ todo, toggleComplete, handleDelete, handleEdit }) => {
   const [newBody, setNewBody] = useState(todo.body);
-  const [currentDate, setCurrentDate] = useState("");
+  const dateToChange = dayjs().format("DD.MM.YYYY");
+  const dateNow = Number(dateToChange.split(".").join(""));
+  const dateTodo = Number(todo.date.split(".").join(""));
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -21,17 +23,9 @@ const Todo = ({ todo, toggleComplete, handleDelete, handleEdit }) => {
     }
   };
 
-  useEffect(() => {
-    const date = dayjs().format("DD/MM/YYYY");
-    setCurrentDate(date);
-    if (date === todo.date) {
-      console.log(todo.isComplited);
-
-      todo.isComplited = true;
-    }
-  }, []);
-
-  console.log(currentDate);
+  if (dateNow >= dateTodo) {
+    todo.isComplited = true;
+  }
 
   return (
     <div className="todo">
