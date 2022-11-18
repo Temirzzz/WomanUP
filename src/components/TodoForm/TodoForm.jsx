@@ -84,11 +84,21 @@ const TodoForm = () => {
         placeholder="Дата завершения"
         className="input input_form"
       />
+
+      <label className="input__label">
+        Загрузить файл
+        <Input
+          onChange={uploadFiles}
+          type="file"
+          placeholder="Документ"
+          className="input input_form input_file"
+        />
+      </label>
       <Loader className="loader loader_file">
-        Uploaded {progress} %{" "}
+        Загружено {progress} %{" "}
         <span
           style={{
-            background: "teal",
+            background: "#fffdfd",
             display: "inline-block",
             marginLeft: "10px",
             height: "20px",
@@ -96,12 +106,6 @@ const TodoForm = () => {
           }}
         ></span>
       </Loader>
-      <Input
-        onChange={uploadFiles}
-        type="file"
-        placeholder="Документ"
-        className="input input_form input_file"
-      />
       <Button className="button button_form">Добавить</Button>
     </form>
   );

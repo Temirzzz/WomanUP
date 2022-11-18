@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "../../UI/Button/Button";
 import Image from "../../UI/Image/Image";
 import Input from "../../UI/Input/Input";
@@ -39,6 +39,8 @@ const Todo = ({ todo, toggleComplete, handleDelete, handleEdit }) => {
           style={{ textDecoration: todo.isComplited && "line-through" }}
           value={todo.body === "" ? newBody : todo.body}
           onChange={handleChange}
+          text
+          row="1"
         />
         <Paragraph className="paragraph paragraph_date">{todo.date}</Paragraph>
         {todo.filePreview !== "" ? (

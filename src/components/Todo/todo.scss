@@ -11,12 +11,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 25px;
-    border: 1px solid teal;
+    background: #fffdfd;
     border-radius: 10px;
-
     @media screen and (max-width: 767px) {
       flex-direction: column;
+      padding: 10px 15px;
     }
   }
 }

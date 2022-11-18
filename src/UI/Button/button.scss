@@ -1,24 +1,41 @@
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 
   &_todo {
-    background: #fff;
-    border: none;
+    width: 30px;
+    height: 25px;
+    background: #fffdfd;
+    border: 1px solid #0763a1;
+    border-radius: 3px;
     margin-right: 10px;
     font-size: 20px;
+    color: #0763a1;
     @media screen and (max-width: 767px) {
       margin-right: 0;
+      margin-bottom: 5px;
     }
   }
 
   &_todo:last-child {
-    margin-right: 0;
+    margin-right: 20px;
+    @media screen and (max-width: 767px) {
+      margin-right: 0;
+    }
   }
 
   &_form {
     width: 120px;
     height: 40px;
     background: scroll;
-    border: 1px solid teal;
+    border: 1px solid #fffdfd;
+    background: #0763a1;
+    color: #fffdfd;
+    @media screen and (max-width: 767px) {
+      width: 100px;
+      height: 30px;
+    }
   }
 }
