@@ -14,6 +14,7 @@ const TodoForm = () => {
   const [date, setDate] = useState("");
   const [progress, setProgress] = useState(0);
   const [filePreview, setFilePreview] = useState("");
+  const [isDesabled, setIsDesabled] = useState(false);
 
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -34,6 +35,7 @@ const TodoForm = () => {
   };
 
   const uploadFiles = (event) => {
+    setIsDesabled(true);
     const file = event.target.files[0];
 
     if (!file) return;
@@ -53,8 +55,9 @@ const TodoForm = () => {
         console.log(error);
       },
       () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((url) =>
-          setFilePreview(url)
+        getDownloadURL(uploadTask.snapshot.ref).then(
+          (url) => setFilePreview(url),
+          setIsDesabled(false)
         );
       }
     );
@@ -106,7 +109,9 @@ const TodoForm = () => {
           }}
         ></span>
       </Loader>
-      <Button className="button button_form">Добавить</Button>
+      <Button disabled={isDesabled} className="button button_form">
+        Добавить
+      </Button>
     </form>
   );
 };

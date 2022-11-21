@@ -38,4 +38,11 @@
       height: 30px;
     }
   }
+
+  &_form:disabled,
+  &_form[disabled] {
+    border: 1px solid #999999;
+    background: #cccccc;
+    color: #666666;
+  }
 }
